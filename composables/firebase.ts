@@ -11,7 +11,10 @@ export const useFirebase = () => {
 
   useEffect(() => {
     if (getApps().length < 1) setFirebaseApp(initializeApp(firebaseConfig));
-    setAuth(getAuth());
+    
+    return () => {
+      setAuth(getAuth());
+    }
   });
 
   useEffect(() => {
@@ -23,7 +26,7 @@ export const useFirebase = () => {
         document.cookie = `idToken=${await user.getIdToken()};max-age=604800`;
       });
     }
-  });
+  }, [auth]);
 
   const signOut = async () => {
     logOut(auth);

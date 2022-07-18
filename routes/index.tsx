@@ -19,7 +19,7 @@ const styles = `
         font-family: -apple-system, BlinkMacSystemFont, Inter, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue,Arial,Noto Sans,sans-serif;
     }`;
 
-export default function Admin({ data }: any) {
+export default function Index({ data }: any) {
   return (
     <div
       class={tw`bg-gray-900 min-h-screen flex flex-col justify-center items-center`}
